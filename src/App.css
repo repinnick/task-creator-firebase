@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.AppContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.App {
+    max-width: 375px;
+    width: 100%;
+    border: 1px solid rgba(217, 214, 214, 0.3);
+}
+
+.AppContent {
+    padding: 24px 7px;
+    background-color: #fdfdfd;
+    min-height: 545px;
+    max-height: 545px;
+    scroll-snap-type: inline;
+    overflow-y: scroll;
+}
+
+.AppContent::-webkit-scrollbar {
+    width: 7px;
+    background-color: white;
+}
+
+.AppContent::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(250, 153, 153, 0.4);
+}
+
+.AppContent::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);*/
+    border-radius: 10px;
+    background-color: inherit;
+}

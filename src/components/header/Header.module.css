@@ -1,0 +1,35 @@
+.header {
+    background-color: #f96060;
+    padding: 5px;
+
+}
+
+.title {
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: normal;
+    letter-spacing: 0.7px;
+}
+
+.nav {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.link {
+    font-size: 18px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.4);
+    border-bottom-color: rgba(255, 255, 255, 0.4);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding-bottom: 4px;
+}
+
+.link.active {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
