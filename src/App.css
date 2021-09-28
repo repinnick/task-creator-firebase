@@ -23,21 +23,23 @@
     min-height: 545px;
     max-height: 545px;
     scroll-snap-type: inline;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 .AppContent::-webkit-scrollbar {
-    width: 7px;
-    background-color: white;
+    width: 3px;
+    background-color: inherit;
 }
 
+.AppContent:hover {
+   overflow-y: scroll;
+}
 .AppContent::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: rgba(250, 153, 153, 0.4);
 }
 
 .AppContent::-webkit-scrollbar-track {
-    /*-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);*/
     border-radius: 10px;
     background-color: inherit;
 }
