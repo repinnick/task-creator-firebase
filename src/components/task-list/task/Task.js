@@ -1,16 +1,21 @@
 import React from 'react';
 import cl from './Task.module.css';
 
-const Task = () => {
+const Task = ({task}) => {
+  const {isCompleted, body, date} = task;
+
+  const currentClass = isCompleted ? cl.done : '';
+
+
   return (
-    <div className={cl.task}>
+    <div className={cl.task + `${isCompleted ? ' ' + cl.done : ''}`}>
       <label className={cl.label}>
-        <input className={cl.input} type="checkbox" />
+        <input className={cl.input} type="checkbox" checked={isCompleted}/>
         <span className={cl.span}></span>
       </label>
       <div className={cl.info}>
-        <p className={cl.text}>Go fishing with Stephen</p>
-        <p className={cl.time}>9:00am</p>
+        <p className={cl.text + `${isCompleted ? ' ' + cl.done : ''}`}>{ body }</p>
+        <p className={cl.time + `${isCompleted ? ' ' + cl.done : ''}`}>{ date }</p>
       </div>
     </div>
   );

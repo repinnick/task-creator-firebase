@@ -2,19 +2,10 @@ import React from 'react';
 import cl from './TaskList.module.css';
 import Task from "./task/Task";
 
-const TaskList = () => {
+const TaskList = ({tasks}) => {
   return (
     <div className={cl.list}>
-      <Task />
-      <Task />
-      <Task />
-      <Task />
-      <Task />
-      <Task />
-      <Task />
-      <Task />
-      <Task />
-      <Task />
+      {tasks.map(task => <Task task={task} />)}
     </div>
   );
 };

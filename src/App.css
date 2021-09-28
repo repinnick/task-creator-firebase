@@ -23,7 +23,7 @@
     min-height: 545px;
     max-height: 545px;
     scroll-snap-type: inline;
-    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
 .AppContent::-webkit-scrollbar {
@@ -31,9 +31,6 @@
     background-color: inherit;
 }
 
-.AppContent:hover {
-   overflow-y: scroll;
-}
 .AppContent::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: rgba(250, 153, 153, 0.4);
