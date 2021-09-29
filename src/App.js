@@ -8,6 +8,7 @@ import CurrentTasks from "./components/tasks/current-tasks/CurrentTasks";
 import CompletedTasks from "./components/tasks/completed-tasks/CompletedTasks";
 import Footer from "./components/footer/Footer";
 import CreateTask from "./components/tasks/create-task/CreateTask";
+import { INITIAL_PATH } from "./definitions/constants";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -23,9 +24,9 @@ const App = () => {
           <Header/>
           <div className="AppContent">
             <Switch className="AppLinks">
-              <Route path={ '/current' } component={ CurrentTasks }/>
-              <Route path={ '/completed' } component={ CompletedTasks }/>
-              <Route path={ '/create-task' } component={ CreateTask }/>
+              <Route path={ INITIAL_PATH.currentTasks.path } component={ CurrentTasks } title="current_tasks"/>
+              <Route path={ INITIAL_PATH.completedTasks.path } component={ CompletedTasks }/>
+              <Route path={ INITIAL_PATH.createTask.path } component={ CreateTask }/>
               <Redirect from={ '*' } to={ '/current' }/>
             </Switch>
           </div>

@@ -1,4 +1,5 @@
 import {
+  ADD_TASK,
   FETCH_TASKS,
   FETCH_TASKS_ERROR,
   FETCH_TASKS_SUCCESS,
@@ -27,6 +28,18 @@ export const fetchTasks = () => {
     }
   }
 }
+
+// export const addTask = (task) => {
+//   return async (dispatch) => {
+//     try {
+//
+//       dispatch({type: ADD_TASK, payload: []})
+//     }
+//     catch (e) {
+//
+//     }
+//   }
+// }
 
 // const createTask = async () => {
 //   let data = {
