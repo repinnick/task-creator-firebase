@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cl from './Task.module.css';
 import { useActions } from "../../../hooks/useActions";
 
@@ -23,7 +23,7 @@ const Task = ({task}) => {
       </label>
       <div className={cl.info}>
         <p className={cl.text + `${isCompleted ? ' ' + cl.done : ''}`}>{ title }</p>
-        <p className={cl.time + `${isCompleted ? ' ' + cl.done : ''}`}>{ viewTimestamp() }</p>
+        <p className={cl.time + `${isCompleted ? ' ' + cl.done : ''}`}>created at { viewTimestamp() }</p>
       </div>
     </div>
   );
