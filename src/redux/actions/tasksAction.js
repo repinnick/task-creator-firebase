@@ -1,5 +1,5 @@
 import {
-  ADD_TASK,
+  COMPLETE_TASK,
   FETCH_TASKS,
   FETCH_TASKS_ERROR,
   FETCH_TASKS_SUCCESS,
@@ -29,26 +29,24 @@ export const fetchTasks = () => {
   }
 }
 
-// export const addTask = (task) => {
-//   return async (dispatch) => {
-//     try {
-//
-//       dispatch({type: ADD_TASK, payload: []})
-//     }
-//     catch (e) {
-//
-//     }
-//   }
-// }
+export const addTask = (task) => {
+  return async (dispatch) => {
+    try {
+      await axios.post(FIRESTORE_URL + TASK_FIRESTORE_JSON, {...task, date: Date.now()})
+      await dispatch(fetchTasks());
+    } catch (e) {
+      dispatch({type: FETCH_TASKS_ERROR, payload: e.message});
+    }
+  }
+}
 
-// const createTask = async () => {
-//   let data = {
-//     body: 'Text',
-//     isCompleted: false,
-//   }
-//   await axios.post('https://react-task-creator-default-rtdb.firebaseio.com/tasks.json', data).then(response => data = {...data, id: response.data.name});
-//
-//   console.log(data);
-// }
-//
-// createTask();
+export const checkedTask = (task) => {
+  return async (dispatch) => {
+    try {
+      dispatch({type: COMPLETE_TASK, payload: task.id});
+      await axios.patch(`${ FIRESTORE_URL }tasks/${task.id}.json`, task);
+    } catch (e) {
+      dispatch({type: FETCH_TASKS_ERROR, payload: e.message});
+    }
+  }
+}

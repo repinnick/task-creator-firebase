@@ -1,5 +1,5 @@
 import {
-  ADD_TASK, COMPLETE_TASK,
+  COMPLETE_TASK,
   FETCH_TASKS,
   FETCH_TASKS_ERROR,
   FETCH_TASKS_SUCCESS,
@@ -21,9 +21,8 @@ export const tasksReducer = (state = initialState, {type, payload}) => {
     case FETCH_TASKS_ERROR:
       return {...state, loading: false, error: payload}
     case COMPLETE_TASK:
-      return {};
-    case ADD_TASK:
-      return {...state, tasks: [...state.tasks, payload]};
+      const tasks = state.tasks.map(task => task.id === payload ? {...task, isCompleted: !task.isCompleted} : task)
+      return {...state, tasks: [...tasks]};
     case REMOVE_TASK:
       const filtered = state.tasks.map(task => task.id !== payload);
       return {...state, tasks: [...filtered]};

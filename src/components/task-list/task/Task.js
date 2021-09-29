@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cl from './Task.module.css';
+import { useActions } from "../../../hooks/useActions";
 
 const Task = ({task}) => {
-  const {isCompleted, body, date, title} = task;
+  const {isCompleted, date, title} = task;
+  const {checkedTask} = useActions();
+
+  const handleCheckbox = (e) => {
+    checkedTask({...task, isCompleted: e.target.checked})
+  }
 
   return (
     <div className={cl.task + `${isCompleted ? ' ' + cl.done : ''}`}>
       <label className={cl.label}>
-        <input className={cl.input} type="checkbox"/>
+        <input className={cl.input} checked={isCompleted} onChange={handleCheckbox} type="checkbox"/>
         {/*checked={isCompleted}*/}
         <span className={cl.span} />
       </label>
