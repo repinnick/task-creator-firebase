@@ -30,7 +30,7 @@ const Task = ({task}) => {
         <p className={cl.time + `${isCompleted ? ' ' + cl.done : ''}`}>created at { viewTimestamp() }</p>
       </div>
       <div className={cl.delete}>
-        <button onClick={deleteTask}>del</button>
+        <button onClick={deleteTask} />
       </div>
     </div>
   );

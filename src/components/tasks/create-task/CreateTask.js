@@ -7,8 +7,8 @@ import { INITIAL_PATH } from "../../../definitions/constants";
 const CreateTask = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [referrer, setReferrer] = useState('')
-  const {addTask} = useActions()
+  const [referrer, setReferrer] = useState('');
+  const {addTask} = useActions();
 
   const handleTitle = (e) => {
     setTitle(e.target.value);
