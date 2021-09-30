@@ -3,11 +3,15 @@ import cl from './Task.module.css';
 import { useActions } from "../../../hooks/useActions";
 
 const Task = ({task}) => {
-  const {isCompleted, date, title} = task;
-  const {checkedTask} = useActions();
+  const {isCompleted, id, date, title} = task;
+  const {checkedTask, removeTask} = useActions();
 
   const handleCheckbox = (e) => {
     checkedTask({...task, isCompleted: e.target.checked});
+  }
+
+  const deleteTask = () => {
+    removeTask(id);
   }
 
   const viewTimestamp = () => {
@@ -24,6 +28,9 @@ const Task = ({task}) => {
       <div className={cl.info}>
         <p className={cl.text + `${isCompleted ? ' ' + cl.done : ''}`}>{ title }</p>
         <p className={cl.time + `${isCompleted ? ' ' + cl.done : ''}`}>created at { viewTimestamp() }</p>
+      </div>
+      <div className={cl.delete}>
+        <button onClick={deleteTask}>del</button>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import {
   FETCH_TASKS,
   FETCH_TASKS_ERROR,
   FETCH_TASKS_SUCCESS,
-  FIRESTORE_URL,
+  FIRESTORE_URL, REMOVE_TASK,
   TASK_FIRESTORE_JSON
 } from "../../definitions/constants";
 import axios from "axios";
@@ -45,6 +45,17 @@ export const checkedTask = (task) => {
     try {
       dispatch({type: COMPLETE_TASK, payload: task.id});
       await axios.patch(`${ FIRESTORE_URL }tasks/${task.id}.json`, task);
+    } catch (e) {
+      dispatch({type: FETCH_TASKS_ERROR, payload: e.message});
+    }
+  }
+}
+
+export const removeTask = (id) => {
+  return async (dispatch) => {
+    try {
+      await axios.delete(`${ FIRESTORE_URL }tasks/${id}.json`);
+      dispatch({type: REMOVE_TASK, payload: id});
     } catch (e) {
       dispatch({type: FETCH_TASKS_ERROR, payload: e.message});
     }

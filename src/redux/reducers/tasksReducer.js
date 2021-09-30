@@ -24,7 +24,7 @@ export const tasksReducer = (state = initialState, {type, payload}) => {
       const tasks = state.tasks.map(task => task.id === payload ? {...task, isCompleted: !task.isCompleted} : task)
       return {...state, tasks: [...tasks]};
     case REMOVE_TASK:
-      const filtered = state.tasks.map(task => task.id !== payload);
+      const filtered = state.tasks.filter(task => task.id !== payload);
       return {...state, tasks: [...filtered]};
     default:
       return state;

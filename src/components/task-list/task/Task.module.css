@@ -9,7 +9,6 @@
     border-right-color: #6074f9;
     border-right-width: 4px;
     border-right-style: solid;
-
 }
 
 .task:last-child {
@@ -74,4 +73,8 @@
 
 .time {
     color: #9b9b9b;
+}
+
+.delete {
+    justify-self: flex-end;
 }
