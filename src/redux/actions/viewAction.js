@@ -1,8 +1,7 @@
 import axios from "axios";
-import { FETCH_TASKS_ERROR, FIRESTORE_URL, VIEW_TASK_INFO } from "../../definitions/constants";
+import { CLEAR_COMPONENT, FETCH_TASKS_ERROR, FIRESTORE_URL, VIEW_TASK_INFO } from "../../definitions/constants";
 
 export const getTask = (id) => {
-
   return async (dispatch) => {
     try {
       const data = await axios.get(`${ FIRESTORE_URL }tasks/${id}.json`).then(res =>  res.data);
@@ -10,5 +9,12 @@ export const getTask = (id) => {
     } catch (e) {
       dispatch({type: FETCH_TASKS_ERROR, payload: e.message});
     }
+  }
+}
+
+
+export const clearComponent = () => {
+  return async (dispatch) => {
+    dispatch({type: CLEAR_COMPONENT})
   }
 }

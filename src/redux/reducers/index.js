@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import { tasksReducer } from "./tasksReducer";
-import { taskReducer } from "./taskReducer";
+import { viewReducer } from "./viewReducer";
 
 const rootReducers = combineReducers({
   tasks: tasksReducer,
-  task: taskReducer,
+  task: viewReducer,
 });
 
 export default rootReducers;

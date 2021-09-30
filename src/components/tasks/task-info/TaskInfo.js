@@ -8,11 +8,12 @@ import { useActions } from "../../../hooks/useActions";
 const TaskInfo = (props) => {
   const {id} = useParams()
   const {title, body, isCompleted, date} = useSelector(state => state.task)
-  const {getTask} = useActions()
+  const {getTask, clearComponent} = useActions()
 
   useEffect(() => {
-    getTask(id)
-  }, [])
+    getTask(id);
+    return clearComponent();
+  }, [id])
 
   const viewTimestamp = () => {
     const taskDate = new Date(date);
