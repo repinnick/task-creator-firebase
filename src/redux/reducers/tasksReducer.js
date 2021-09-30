@@ -1,4 +1,5 @@
 import {
+  ADD_TASK,
   COMPLETE_TASK,
   FETCH_TASKS,
   FETCH_TASKS_ERROR,
@@ -20,6 +21,9 @@ export const tasksReducer = (state = initialState, {type, payload}) => {
       return {...state, loading: false, tasks: payload};
     case FETCH_TASKS_ERROR:
       return {...state, loading: false, error: payload}
+    case ADD_TASK:
+      console.log(payload);
+      return {...state, tasks: [...state.tasks.push(payload)]}
     case COMPLETE_TASK:
       const tasks = state.tasks.map(task => task.id === payload ? {...task, isCompleted: !task.isCompleted} : task)
       return {...state, tasks: [...tasks]};

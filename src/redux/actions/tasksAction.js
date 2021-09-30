@@ -1,4 +1,5 @@
 import {
+  ADD_TASK,
   COMPLETE_TASK,
   FETCH_TASKS,
   FETCH_TASKS_ERROR,
@@ -32,8 +33,17 @@ export const fetchTasks = () => {
 export const addTask = (task) => {
   return async (dispatch) => {
     try {
-      await axios.post(FIRESTORE_URL + TASK_FIRESTORE_JSON, {...task, date: Date.now()})
-      await dispatch(fetchTasks());
+      const data = {
+        ...task,
+        date: Date.now(),
+      }
+      const taskWithId = await axios.post(FIRESTORE_URL + TASK_FIRESTORE_JSON, data).then(res => {
+        return {
+          ...data,
+          id: res.data.name
+        }
+      })
+      dispatch({type: ADD_TASK, payload: taskWithId})
     } catch (e) {
       dispatch({type: FETCH_TASKS_ERROR, payload: e.message});
     }
