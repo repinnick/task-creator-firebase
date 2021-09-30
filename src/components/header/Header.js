@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import cl from './Header.module.css';
-import { NavLink, withRouter } from "react-router-dom";
+import { NavLink, useHistory, withRouter } from "react-router-dom";
 import { INITIAL_PATH } from "../../definitions/constants";
 
 const Header = (props) => {
-
   const [title, setTitle] = useState('Work List')
-  // Object.keys(INITIAL_PATH).filter(key => {
-  //   return INITIAL_PATH[key].path === props.location.pathname ? setTitle(INITIAL_PATH[key].title) : '';
-  // })
+  const params = useHistory().location.pathname;
 
-  // console.log('Pathname', props.location.pathname);
-  // console.log('Props', props)
+  useEffect(() => {
+    Object.keys(INITIAL_PATH)
+      .forEach(key => INITIAL_PATH[key].path === params ? setTitle(INITIAL_PATH[key].title) : '')
+  })
 
   return (
     <header className={cl.header}>
