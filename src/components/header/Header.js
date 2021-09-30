@@ -10,8 +10,8 @@ const Header = (props) => {
   //   return INITIAL_PATH[key].path === props.location.pathname ? setTitle(INITIAL_PATH[key].title) : '';
   // })
 
-  console.log('Pathname', props.location.pathname);
-  console.log('Props', props)
+  // console.log('Pathname', props.location.pathname);
+  // console.log('Props', props)
 
   return (
     <header className={cl.header}>

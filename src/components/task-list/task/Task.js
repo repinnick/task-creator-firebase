@@ -1,6 +1,7 @@
 import React from 'react';
 import cl from './Task.module.css';
 import { useActions } from "../../../hooks/useActions";
+import { NavLink } from "react-router-dom";
 
 const Task = ({task}) => {
   const {isCompleted, id, date, title} = task;
@@ -30,7 +31,10 @@ const Task = ({task}) => {
         <p className={cl.time + `${isCompleted ? ' ' + cl.done : ''}`}>created at { viewTimestamp() }</p>
       </div>
       <div className={cl.delete}>
-        <button onClick={deleteTask} />
+        <button className={cl.remove} onClick={deleteTask} />
+        <NavLink to={`/task/${id}`}>
+          <button className={cl.openInfo}/>
+        </NavLink>
       </div>
     </div>
   );

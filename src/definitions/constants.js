@@ -7,6 +7,7 @@ export const REMOVE_TASK = 'REMOVE_TASK';
 export const COMPLETE_TASK = 'COMPLETE_TASK';
 
 export const CREATE_TASK = 'CREATE_TASK';
+export const VIEW_TASK_INFO = 'VIEW_TASK_INFO';
 
 export const FIRESTORE_URL = 'https://react-task-creator-default-rtdb.firebaseio.com/';
 export const TASK_FIRESTORE_JSON = 'tasks.json';
