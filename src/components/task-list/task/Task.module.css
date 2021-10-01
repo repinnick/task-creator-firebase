@@ -38,6 +38,7 @@
     height: 16px;
     border: solid 3px #6074f9;
     background-color: inherit;
+    cursor: pointer;
 }
 
 .input:checked + .span {

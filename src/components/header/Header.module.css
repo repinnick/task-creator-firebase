@@ -1,7 +1,6 @@
 .header {
     background-color: #f96060;
     padding: 5px;
-
 }
 
 .title {
@@ -11,10 +10,10 @@
     color: #ffffff;
     font-weight: normal;
     letter-spacing: 0.7px;
+    margin-bottom: 15px;
 }
 
 .nav {
-    margin-top: 15px;
     display: flex;
     justify-content: space-around;
 }

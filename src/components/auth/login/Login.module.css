@@ -1,0 +1,54 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.image {
+    max-width: 307px;
+    max-height: 254px;
+    margin-bottom: 32px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    font-size: 20px;
+    line-height: 24px;
+    color: #313131;
+}
+
+input {
+    width: 100%;
+    color: #313131;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #ededed;
+    margin-bottom: 22px;
+    outline: none;
+    padding: 5px 0;
+}
+
+.email {
+}
+
+.password {
+}
+
+.submit {
+    width: 100%;
+    background: #f96060;
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #ffffff;
+    height: 40px;
+}
+

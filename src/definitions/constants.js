@@ -10,12 +10,15 @@ export const CREATE_TASK = 'CREATE_TASK';
 export const VIEW_TASK_INFO = 'VIEW_TASK_INFO';
 export const CLEAR_COMPONENT = 'CLEAR_COMPONENT';
 
+// Firebase
 export const FIRESTORE_URL = 'https://react-task-creator-default-rtdb.firebaseio.com/';
 export const TASK_FIRESTORE_JSON = 'tasks.json';
+export const API_KEY = 'AIzaSyDUF6R5ZlxmUKlM-551emrRczgRO_ePwHY'
 
 // Path
 export const INITIAL_PATH = {
   currentTasks: {path: '/current', title: 'Current Tasks'},
   createTask: {path: '/create-task', title: 'New Task'},
-  completedTasks: {path: '/completed', title: 'Completed Tasks'}
+  completedTasks: {path: '/completed', title: 'Completed Tasks'},
+  login: {path: '/login', title: 'Login'}
 }

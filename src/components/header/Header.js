@@ -12,6 +12,14 @@ const Header = (props) => {
       .forEach(key => INITIAL_PATH[key].path === params ? setTitle(INITIAL_PATH[key].title) : '')
   })
 
+  if (params === INITIAL_PATH.login.path) {
+    return (
+      <header className={cl.header}>
+        <h1 className={cl.title}>{ title }</h1>
+      </header>
+    )
+  }
+
   return (
     <header className={cl.header}>
       <h1 className={cl.title}>{ title }</h1>
